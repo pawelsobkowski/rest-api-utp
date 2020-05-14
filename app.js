@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3001;
 const db = require('./db/database');
 const signupRoute = require('./routes/signup');
 const signinRoute = require('./routes/signin');
@@ -28,4 +27,4 @@ app.use(eventsRoute);
 app.use(participantsRoute);
 app.use(usersRoute);
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+app.listen(process.env.PORT || 8080);
